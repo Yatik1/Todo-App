@@ -17,8 +17,8 @@ const TodoSchema = new mongoose.Schema({
 
 export const Todo = mongoose.model("Todo" , TodoSchema)
 
+//actions 
 
 export const getTodos = () => Todo.find(); //all todos 
 export const createTodo = (values : Record<string,any>) => new Todo(values).save().then((todo) => todo.toObject()) // to add new todo
-export const deleteTodo = (id:string) => Todo.findOneAndDelete({_id:id})
-export const updateTodo = (id: string, values: Record<string, any>) => Todo.findByIdAndUpdate(id,values);
+export const deleteTodo = (id:string) => Todo.findOneAndDelete({_id:id}) // delete todo
