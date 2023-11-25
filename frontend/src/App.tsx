@@ -80,9 +80,9 @@ const deleteTodo = async (id: string) => {
 }
 
   return (
-    <div className="App">
-      <h1>Welcome, Tyler</h1>
-      <h4>Your tasks</h4>
+    <div className="Todo">
+      <h1>TO-DO List ✅🔥 </h1>
+      <h4>Your Goals ⚽</h4>
 
       <div className="todos">
         {todos.length > 0 ? todos.map(todo => (
@@ -104,7 +104,7 @@ const deleteTodo = async (id: string) => {
 
       {popupActive ? (
         <div className="popup">
-          <div className="closePopup" onClick={() => setPopupActive(false)}>X</div>
+          <div className="closePopup" onClick={() => setPopupActive(false)}>x</div>
           <div className="content">
             <h3>Add Task</h3>
             <input type="text" className="add-todo-input" onChange={e => setNewTodo(e.target.value)} value={newTodo} />
