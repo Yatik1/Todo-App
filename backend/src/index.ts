@@ -6,7 +6,7 @@ import { Todo, deleteTodo, getTodos } from "./db/todoSchema"
 require('dotenv').config() 
 
 const app = express()
-const PORT = 5555
+const PORT = process.env.PORT! || 5555
 
 app.use(express.json());
 app.use(cors({
@@ -75,9 +75,9 @@ app.listen(PORT , () => {
     console.log(`Server is on PORT ${PORT}`)
 })
 
-const MONGO = process.env.MONGO_URL!
+
 mongoose.Promise = Promise
-mongoose.connect(MONGO) 
+mongoose.connect(process.env.MONGO_URL!) 
   .then(() => console.log("Databse is connected ! "))
   .catch((error) => console.log("Error" , error))
   
