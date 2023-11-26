@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./frontend
+    container_name: react-ui
+    ports:
+      - "3000:3000"
+   
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    container_name: node-api
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+       
+  mongodb:
+    image: mongo
+    container_name: mongo-database
+    volumes:
+      - /home/data:/data/db
+
+volumes:
+  data:
+  logs:
+
