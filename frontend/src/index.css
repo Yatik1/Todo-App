@@ -3,7 +3,7 @@
 :root {
 	--primary: #1ed837;
 	--secondary: rgb(240, 252, 78);
-	--dark-alt: white;
+	
 }
 
 * {
@@ -82,7 +82,6 @@ h4 {
 	top: 50%;
 	transform: translateY(-50%);
 	right: 16px;
-	color: var(--light);
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
